@@ -189,6 +189,11 @@ const Template = {
             if (tableBody) {
                 tableBody.innerHTML = '';
 
+                // 重置行计数器
+                if (typeof App !== 'undefined') {
+                    App.rowCount = 0;
+                }
+
                 data.items.forEach(item => {
                     if (typeof App !== 'undefined' && App.addTableRow) {
                         App.addTableRow(item);
